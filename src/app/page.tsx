@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function Home() {
   const [css, setCss] = useState('opacity-0');
   const [randNumber, setRandNumber] = useState(0);
-  const picture = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
+  const picture = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.JPG'];
   const randNum = () => {
     return Math.floor(Math.random() * 5);
   }
