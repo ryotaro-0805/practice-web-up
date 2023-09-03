@@ -5,12 +5,16 @@ import { useState } from 'react';
 export default function Home() {
   const [css, setCss] = useState('opacity-0');
   const [randNumber, setRandNumber] = useState(0);
+  const [buttonStatus, setButtonStatus] = useState<any>(false);
   const picture = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.JPG'];
   const randNum = () => {
     return Math.floor(Math.random() * 5);
   }
   const handleClick = () => {
-    console.log(randNumber);
+    setButtonStatus(true);
+    setTimeout(() => {
+      setButtonStatus(false);
+    }, 1000);
 
     if (css === 'opacity-0') {
       setRandNumber(randNum());
@@ -23,7 +27,7 @@ export default function Home() {
   return (
     <div className=' text-center'>
       <h1 className='text-2xl'>practice-web-up</h1>
-      <button onClick={handleClick} className=' my-3 border border-blue-500 rounded bg-pink-200 p-1 hover:opacity-80 duration-300'>
+      <button disabled={buttonStatus} onClick={handleClick} className=' my-3 border border-blue-500 rounded bg-pink-200 p-1 hover:opacity-80 duration-300'>
         {
           (css === 'opacity-0') ? 'Appear Picture' : 'Disappear Picture'
 
